@@ -1,3 +1,3 @@
 
-rootProject.name = "qa-auto-edu"
+rootProject.name = "edu-qa-auto-kotlin"
 
