@@ -3,9 +3,9 @@ import java.time.format.DateTimeFormatter
 
 val odds = listOf("01", "03", "05", "07", "09", "11")
 
-val time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH"))
+val hour = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH"))
 
-if (time in odds)
-    println("Сейчас значение часа нечетное: " + time)
+if (hour in odds)
+    println("Сейчас значение часа нечетное: " + hour)
 else
-    println("Сейчас значение часа четное: " + time)
+    println("Сейчас значение часа четное: " + hour)
