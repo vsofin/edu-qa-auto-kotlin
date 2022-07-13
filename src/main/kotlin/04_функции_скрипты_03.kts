@@ -1,9 +1,13 @@
-val names = mutableListOf<String>("anybody")
+val names = mutableListOf<String>()
 
-fun greeting(names: List<String>) {
-    for (i in names) {
-        println("Hello, $i")
+fun greeting(say: String, names: List<String>) {
+
+    for (item in names) {
+        println("$say, $item")
     }
-}
 
-greeting(names)
+}
+greeting("Hello", names)
+
+val namesHi = mutableListOf<String>()
+greeting("Hi", namesHi)

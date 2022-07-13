@@ -1,5 +1,5 @@
 val names = mutableListOf<String>()
 
-for (i in names) {
-    println("Hello, $i")
+for (item in names) {
+    println("Hello, $item")
 }
