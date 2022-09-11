@@ -1,5 +1,10 @@
-val names = mutableListOf<String>()
+import java.io.File
 
-for (item in names) {
-    println("Hello, $item")
+fun log(data: String) {
+    println(data)
+    File("log.txt").appendText(data + "\n")
 }
+
+log("some data")
+
+log("another data")

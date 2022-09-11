@@ -1,2 +1,3 @@
-println("Hello, Vladimir")
-println("Hello, Alma")
+import java.io.File
+
+File("log.txt").appendText("some data" + "\n")

@@ -1,13 +1,9 @@
-val names = mutableListOf<String>()
+// we can use no functions that implemented in another kts-files
+log("some data")
 
-fun greeting(say: String, names: List<String>) {
+// but we can use functions that implemented in any class (that class may implement in another kts-file)
+val history = _04_функции_скрипты_03_b.History()
 
-    for (item in names) {
-        println("$say, $item")
-    }
+history.log("some data")
 
-}
-greeting("Hello", names)
-
-val namesHi = mutableListOf<String>()
-greeting("Hi", namesHi)
+history.log("another data")
