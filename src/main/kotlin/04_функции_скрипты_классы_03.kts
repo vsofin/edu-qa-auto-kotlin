@@ -2,7 +2,7 @@
 log("some data")
 
 // but we can use functions that implemented in any class (that class may implement in another kts-file)
-val history = _04_функции_скрипты_03_b.History()
+val history = _04_функции_скрипты_классы_03_b.History()
 
 history.log("some data")
 
