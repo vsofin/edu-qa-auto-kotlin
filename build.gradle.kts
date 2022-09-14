@@ -1,11 +1,22 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+val ktor_version: String by project
+val kotlin_version: String by project
+val logback_version: String by project
 
 plugins {
-    kotlin("jvm") version "1.6.21"
+    application
+    kotlin("jvm") version "1.7.10"
+    id("io.ktor.plugin") version "2.1.1"
 }
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
+group = "ru.vladimirsofin"
+version = "0.0.1"
+
+application {
+    mainClass.set("ru.vladimirsofin.ApplicationKt")
+
+    val isDevelopment: Boolean = project.ext.has("development")
+    applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
+}
 
 repositories {
     mavenCentral()
@@ -18,12 +29,9 @@ dependencies {
     implementation(kotlin("compiler-embeddable"))
     implementation(kotlin("script-util"))
     implementation(kotlin("scripting-compiler-embeddable"))
-}
 
-tasks.test {
-    useJUnitPlatform()
-}
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+    implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
+    implementation("ch.qos.logback:logback-classic:$logback_version")
+    testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
 }

@@ -7,11 +7,11 @@ class History {
         File("log.txt").appendText(data + "\n")
     }
 
-    fun isExists(data: String): Boolean {
+    fun isExists(substring: String): Boolean {
         val lines = File("log.txt").readLines()
 
         lines.forEach() {
-            if (data in it)
+            if (substring in it)
                 return true
         }
 
