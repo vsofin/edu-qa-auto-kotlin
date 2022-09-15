@@ -1,27 +1,16 @@
 import java.io.File
 
-class History {
+fun isExists(substring: String): Boolean {
+    val lines = File("log.txt").readLines()
 
-    fun log(data: String) {
-        println(data)
-        File("log.txt").appendText(data + "\n")
+    lines.forEach() {
+        if (substring in it)
+            return true
     }
 
-    fun isExists(substring: String): Boolean {
-        val lines = File("log.txt").readLines()
-
-        lines.forEach() {
-            if (substring in it)
-                return true
-        }
-
-        return false
-    }
-
+    return false
 }
 
-val history = History()
+println( isExists("some") )
 
-println( history.isExists("some") )
-
-println( history.isExists("not") )
+println( isExists("not") )
